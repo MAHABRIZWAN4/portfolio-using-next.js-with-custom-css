@@ -32,7 +32,7 @@ export default function Home() {
         <div id="container">
           <div className="box">
             <div id="content">
-              <h1 className="heading">
+              <h1 className="heading" >
                 Empowering Tomorrow&apos;s <br /> Tech by Mahab Rizwan
               </h1>
               <p className="paragraph">
