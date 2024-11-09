@@ -4,28 +4,27 @@ import Image from "next/image";
 
 export default function Home() {
   useEffect(() => {
-   
-    
     document.querySelectorAll(".box").forEach((box) => {
       box.addEventListener("mousemove", (e) => {
-        
-        
-        
         const targetBox = box as HTMLElement;
         const mouseEvent = e as MouseEvent;
 
-        
-        const x = mouseEvent.pageX - targetBox.offsetLeft; 
-        const y = mouseEvent.pageY - targetBox.offsetTop; 
+        // 'const' used for variables 'x' and 'y' as they are not reassigned
+        const x = mouseEvent.pageX - targetBox.offsetLeft;
+        const y = mouseEvent.pageY - targetBox.offsetTop;
 
-       document.querySelectorAll("span").forEach((span) => {
+        document.querySelectorAll("span").forEach((span) => {
           span.style.left = x + "px";
           span.style.top = y + "px";
-        });});});
+        });
+      });
+    });
     return () => {
       document.querySelectorAll(".box").forEach((box) => {
         box.removeEventListener("mousemove", () => {});
-      });}; }, []);
+      });
+    };
+  }, []);
 
   return (
     <main id="HomePage">
@@ -50,8 +49,7 @@ export default function Home() {
         </div>
 
         <div id="pic">
-          <Image src="/image.png" alt="Profile" height={100} width={100} id="profile"
-          />
+          <Image src="/image.png" alt="Profile" height={100} width={100} id="profile" />
         </div>
       </div>
     </main>
